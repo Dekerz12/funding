@@ -22,14 +22,14 @@ const Footer = () => {
       </TableRow>
       <TableRow className="section-deductions">
         <TableCell className="border font-bold">Total Deductions:</TableCell>
-        <TableCell className="border font-bold">{totalDeduction}</TableCell>
+        <TableCell className="border font-bold">${totalDeduction}</TableCell>
       </TableRow>
       <TableRow className="section-closing">
         <TableCell className="border font-bold">
           Total Needed for Closing:
         </TableCell>
         <TableCell className="border font-bold">
-          {loan_amount - totalDeduction}
+          ${loan_amount - totalDeduction}
         </TableCell>
       </TableRow>
     </>
