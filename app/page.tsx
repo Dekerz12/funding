@@ -8,8 +8,8 @@ import { useState } from "react";
 export default function Home() {
   const showTable = useStore((state) => state.showTable);
   return (
-    <div className="flex h-screen">
-      <div className="bg-background border-r w-72 p-4 flex flex-col justify-between">
+    <div className="flex justify-around h-screen">
+      {/* <div className="bg-background border-r w-72 p-4 flex flex-col justify-between">
         <div>
           <div className="flex items-center gap-2 mb-6">
             <UsersIcon className="w-6 h-6" />
@@ -26,7 +26,7 @@ export default function Home() {
             </Link>
           </nav>
         </div>
-      </div>
+      </div> */}
       <WireForm />
       <WireTable />
     </div>

@@ -23,7 +23,7 @@ const WireTable = () => {
   } = wire;
 
   return (
-    <div className="flex-1 p-6 flex items-start mt-8 ">
+    <div className="basis-1/3 p-6 flex items-start mt-8 ">
       <Table>
         <TableBody>
           {/* Header */}

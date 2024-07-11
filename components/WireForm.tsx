@@ -21,7 +21,7 @@ const WireForm = () => {
   } = wire;
 
   return (
-    <div className="flex-1 p-6 flex flex-col gap-4 mt-8 ">
+    <div className="basis-[3/4] p-6 flex flex-col gap-4 mt-8 ">
       <div className="grid w-full max-w-sm items-center gap-1.5">
         <Label htmlFor="borrower">Borrower</Label>
         <Input
