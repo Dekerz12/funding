@@ -20,7 +20,7 @@ const Sections = ({
         </TableCell>
       </TableRow>
 
-      {Array.isArray(fees) && fees.length
+      {Array.isArray(fees) && fees.length && fees.some((fee) => fee.amount > 0)
         ? fees.map((fee) => (
             <TableRow key={fee.name} className="sections">
               <TableCell className="border">{fee.name}</TableCell>

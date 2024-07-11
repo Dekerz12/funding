@@ -11,6 +11,7 @@ import { useForm } from "react-hook-form";
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 import { Trash } from "lucide-react";
+import { useToast } from "./ui/use-toast";
 
 const SectionForm = ({
   section_name,
@@ -23,6 +24,7 @@ const SectionForm = ({
   const { selectedSections, updateSelections, addFee, deleteFee, updateFee } =
     wire;
   const form = useForm();
+  const { toast } = useToast();
   function onSubmit(data: any) {
     // Convert object to array of key-value pairs
     const arr = Object.entries(data);
@@ -48,7 +50,9 @@ const SectionForm = ({
       name: string;
       amount: string;
     }[];
-    const payload = groupedArray.map((group) => ({
+
+    const payload = groupedArray.map((group, i) => ({
+      id: i,
       name: group.name,
       amount: parseFloat(group.amount),
     }));
@@ -61,6 +65,10 @@ const SectionForm = ({
     // )
 
     updateFee(section_name, payload as Fee[]);
+    toast({
+      title: `Section ${section_name[0]}`,
+      description: "Updated Successfully",
+    });
   }
 
   return (
@@ -114,6 +122,7 @@ const SectionForm = ({
                 <Trash
                   className="text-red-500 cursor-pointer"
                   onClick={() => {
+                    console.log(fee.id);
                     deleteFee(section_name, fee.id);
                   }}
                 />

@@ -86,13 +86,13 @@ export function SectionSelector() {
           ))}
       </div>
 
-      <Button
+      {/* <Button
         className="mt-8"
         disabled={!selectedSections.some((section) => !!section.fees)}
         onClick={() => setShowTable()}
       >
         Generate Table
-      </Button>
+      </Button> */}
     </div>
   );
 }
