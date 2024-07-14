@@ -1,20 +1,7 @@
 "use client";
-
-import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
 import { sectionsNames } from "@/lib/data";
 import { useStore } from "@/lib/slice";
-
-import { Input } from "./ui/input";
-import { useState } from "react";
-import {
-  Form,
-  FormControl,
-  FormDescription,
-  FormField,
-  FormItem,
-  FormLabel,
-} from "./ui/form";
 import { useForm } from "react-hook-form";
 import SectionForm from "./SectionForm";
 
@@ -22,7 +9,7 @@ const items = sectionsNames;
 
 export function SectionSelector() {
   const wire = useStore((state) => state);
-  const { selectedSections, updateSelections, setShowTable } = wire;
+  const { selectedSections, updateSelections } = wire;
   const form = useForm();
 
   return (
@@ -85,14 +72,6 @@ export function SectionSelector() {
             </div>
           ))}
       </div>
-
-      {/* <Button
-        className="mt-8"
-        disabled={!selectedSections.some((section) => !!section.fees)}
-        onClick={() => setShowTable()}
-      >
-        Generate Table
-      </Button> */}
     </div>
   );
 }

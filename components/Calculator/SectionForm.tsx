@@ -1,17 +1,18 @@
 "use client";
-import { Fee, useStore } from "@/lib/slice";
+import { useStore } from "@/lib/slice";
 import {
   Form,
   FormControl,
   FormDescription,
   FormField,
   FormItem,
-} from "./ui/form";
+} from "../ui/form";
 import { useForm } from "react-hook-form";
-import { Button } from "./ui/button";
-import { Input } from "./ui/input";
+import { Button } from "../ui/button";
+import { Input } from "../ui/input";
 import { Trash } from "lucide-react";
-import { useToast } from "./ui/use-toast";
+import { useToast } from "../ui/use-toast";
+import { Fee } from "@/lib/store";
 
 const SectionForm = ({
   section_name,
@@ -25,8 +26,12 @@ const SectionForm = ({
     wire;
   const form = useForm();
   const { toast } = useToast();
+
   function onSubmit(data: any) {
     // Convert object to array of key-value pairs
+    Object.keys(data).forEach(
+      (key) => data[key] === undefined && delete data[key]
+    );
     const arr = Object.entries(data);
 
     // Initialize an empty result object
@@ -63,6 +68,7 @@ const SectionForm = ({
     //     accumulator + parseFloat(currentValue.amount),
     //   0
     // )
+    console.log(data);
 
     updateFee(section_name, payload as Fee[]);
     toast({
@@ -122,8 +128,9 @@ const SectionForm = ({
                 <Trash
                   className="text-red-500 cursor-pointer"
                   onClick={() => {
-                    console.log(fee.id);
                     deleteFee(section_name, fee.id);
+                    form.unregister(`name${fee.id}`);
+                    form.unregister(`amount${fee.id}`);
                   }}
                 />
               </div>

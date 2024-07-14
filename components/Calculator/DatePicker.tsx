@@ -12,7 +12,7 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
-import { Label } from "./ui/label";
+import { Label } from "../ui/label";
 
 export function DatePicker({
   date,

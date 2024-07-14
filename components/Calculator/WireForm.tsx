@@ -1,9 +1,8 @@
 import DatePicker from "./DatePicker";
-import { Label } from "./ui/label";
-import { Input } from "./ui/input";
+import { Label } from "../ui/label";
+import { Input } from "../ui/input";
 import { useStore } from "@/lib/slice";
 import { SectionSelector } from "./SectionSelector";
-import { Button } from "./ui/button";
 
 const WireForm = () => {
   const wire = useStore((state) => state);
@@ -21,7 +20,7 @@ const WireForm = () => {
   } = wire;
 
   return (
-    <div className="basis-[3/4] p-6 flex flex-col gap-4 mt-8 ">
+    <div className=" p-6 flex flex-col gap-4 mt-8 ">
       <div className="grid w-full max-w-sm items-center gap-1.5">
         <Label htmlFor="borrower">Borrower</Label>
         <Input

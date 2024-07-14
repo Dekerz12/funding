@@ -2,7 +2,6 @@ import { Table, TableBody } from "@/components/ui/table";
 import Header from "./Header";
 import Sections from "./Sections";
 import Footer from "./Footer";
-import { Button } from "./ui/button";
 import { useStore } from "@/lib/slice";
 import { format } from "date-fns";
 
@@ -23,7 +22,7 @@ const WireTable = () => {
   } = wire;
 
   return (
-    <div className="basis-1/3 p-6 flex items-start mt-8 ">
+    <div className="basis-1/2 mx-auto p-6 flex items-start mt-8 ">
       <Table>
         <TableBody>
           {/* Header */}
