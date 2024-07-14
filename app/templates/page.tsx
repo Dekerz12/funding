@@ -4,7 +4,7 @@ import React from "react";
 
 const TemplatesPage = () => {
   const wire = useStore((state) => state);
-  const { selectedSections, loan_amount } = wire;
+  const { selectedSections, loan_amount, borrower, loan_number } = wire;
   const formatSelection = selectedSections.map((section) => {
     if (Array.isArray(section.fees) && section.fees.length) {
       return section.fees.reduce((acc, curr) => acc + curr.amount, 0);
@@ -16,9 +16,12 @@ const TemplatesPage = () => {
     : 0;
   return (
     <div className="mx-auto py-24">
+      <p className="mb-8">
+        AXEN CLOSING - {borrower} - {loan_number} - property name
+      </p>
       {/* prettier-ignore */}
       <p style={{ whiteSpace: "pre" }}>
-        {`My name is ___ , your funder for this loan. Please confirm if we are balanced at $${loan_amount - totalDeduction}.
+        {`My name is ___ , your funder for this loan. Please confirm if we are balanced at $${(loan_amount - totalDeduction).toLocaleString()}.
 Your confirmation is required before we request and order the wire to prevent potential fees and delay.
 
 
