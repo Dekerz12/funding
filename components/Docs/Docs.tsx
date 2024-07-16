@@ -90,10 +90,10 @@ const originBank_docs = [
   { keyword: "Rate Note", doc_name: "NOTE -" },
 ];
 
-const DocsPage = () => {
+const Docs = () => {
   const { toast } = useToast();
   return (
-    <div className="mx-auto p-16">
+    <div className="mx-auto">
       <Tabs defaultValue="first_funding" className="">
         <TabsList className="grid w-full grid-cols-4">
           <TabsTrigger value="first_funding">First Funding</TabsTrigger>
@@ -319,4 +319,4 @@ const DocsPage = () => {
   );
 };
 
-export default DocsPage;
+export default Docs;

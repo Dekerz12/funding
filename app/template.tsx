@@ -26,32 +26,7 @@ export default function Template({ children }: { children: React.ReactNode }) {
               <Calculator className="w-5 h-5" />
               <span>Calculator</span>
             </Link>
-            <Link
-              href="/fees"
-              className="flex items-center gap-2 px-3 py-2 rounded-md hover:bg-accent hover:text-accent-foreground"
-              prefetch={false}
-            >
-              <CircleDollarSign className="w-5 h-5" />
-              <span>Fees</span>
-            </Link>
 
-            <Link
-              href="/templates"
-              className="flex items-center gap-2 px-3 py-2 rounded-md hover:bg-accent hover:text-accent-foreground"
-              prefetch={false}
-            >
-              <Mail className="w-5 h-5" />
-              <span>Templates</span>
-            </Link>
-
-            <Link
-              href="/docs"
-              className="flex items-center gap-2 px-3 py-2 rounded-md hover:bg-accent hover:text-accent-foreground"
-              prefetch={false}
-            >
-              <FolderOpen className="w-5 h-5" />
-              <span>Gathering Docs</span>
-            </Link>
             {/* 
             <Link
               href="/order"

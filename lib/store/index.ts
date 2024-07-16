@@ -13,6 +13,10 @@ export interface CalculatorSlice {
   signing_date: Date;
   funding_date: Date;
   loan_amount: number;
+  funder: string;
+  changeFunder: (name: any) => void;
+  property: string;
+  changeProperty: (name: any) => void;
   changeBorrower: (name: any) => void;
   changeLoanNumber: (number: any) => void;
   changeFnDate: (date: any) => void;
@@ -36,10 +40,14 @@ export const createCalculatorSlice: StateCreator<
   CalculatorSlice
 > = (set) => ({
   borrower: "",
+  funder: "",
+  property: "",
   loan_number: "",
   signing_date: new Date(),
   funding_date: new Date(),
   loan_amount: 0,
+  changeFunder: (name: any) => set((state) => ({ funder: name })),
+  changeProperty: (name: any) => set((state) => ({ property: name })),
   changeBorrower: (name: any) => set((state) => ({ borrower: name })),
   changeLoanNumber: (number: any) => set((state) => ({ loan_number: number })),
   changeFnDate: (date: any) => set((state) => ({ funding_date: date })),

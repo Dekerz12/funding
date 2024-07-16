@@ -5,9 +5,6 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import React from "react";
-
-const fees_net = [];
 
 const generalFees = [
   "GRMA Fee for all Georgia Loans $10",
@@ -65,7 +62,7 @@ const feesAdd = [
 const usLender = ["Proceeds of Subordinate Lien (section L adjustment"];
 const newRez = ["Closing Coordination Fee  $295"];
 
-const FeesPage = () => {
+const Fees = () => {
   return (
     <div className="flex-1 gap-4 p-12 flex">
       <Card>
@@ -104,8 +101,23 @@ const FeesPage = () => {
             <CardTitle>Other Bank Fees</CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="flex flex-col gap-4">
+            <div className="flex flex-col gap-2">
               {otherBankFees.map((fee) => (
+                <p key={fee} className="text-lg">
+                  {fee}
+                </p>
+              ))}
+            </div>
+          </CardContent>
+        </Card>
+
+        <Card className="flex-1">
+          <CardHeader>
+            <CardTitle>HKL Fees</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <div className="flex flex-col gap-2">
+              {HKLFees.map((fee) => (
                 <p key={fee} className="text-lg">
                   {fee}
                 </p>
@@ -165,4 +177,4 @@ const FeesPage = () => {
   );
 };
 
-export default FeesPage;
+export default Fees;
