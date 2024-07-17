@@ -52,24 +52,48 @@ const Email = () => {
       <p className="mb-8">
         AXEN CLOSING - {borrower} - {loan_number} - {property}
       </p>
-      {/* prettier-ignore */}
-      <p style={{ whiteSpace: "pre" }}>
-          {`My name is ${funder}, your funder for this loan. Please confirm if we are balanced at $${(loan_amount - totalDeduction).toLocaleString()}.
-  Your confirmation is required before we request and order the wire to prevent potential fees and delay.
-  
-  
-  Here is the wire breakdown for your reference:
-  
-  
-  Attached to this email is the CD containing the highlighted fees we are netting out of the wire. Let me know if there are any changes to the Final CD.
-  Please confirm the following:`}
-   </p>
-      <ul className="list-disc ml-12">
-        <li>Are the attached Wire Instructions accurate?</li>
-        <li>What time is the borrower scheduled to sign?</li>
-        <li>ETA for the Signed Closing Package.</li>
-      </ul>
-      {`Furthermore, I have included the Funding Instructions in this email. Please review and adhere to the provided instructions.`}
+
+      <div className="space-y-4">
+        <p>Hi Title Team,</p>
+        <div>
+          {" "}
+          <p>
+            My name is {funder}, your funder for this loan.{" "}
+            <span className="font-bold">
+              Please confirm if we are balanced at{" "}
+              <span className="text-2xl">
+                {(loan_amount - totalDeduction).toLocaleString()}
+              </span>
+              $ .
+            </span>
+          </p>
+          <p className="font-bold">
+            Your confirmation is required before we request and order the wire
+            to prevent potential fees and delay.
+          </p>
+        </div>
+
+        <p>Here is the wire breakdown for your reference:</p>
+
+        <p>
+          Attached to this email is the CD containing the highlighted fees we
+          are netting out of the wire. Let me know if there are any changes to
+          the Final CD.
+        </p>
+      </div>
+
+      <p className="font-bold mt-4">
+        Please confirm the following:
+        <ul className="list-disc ml-12 mt-4 mb-4 font-bold">
+          <li>Are the attached Wire Instructions accurate?</li>
+          <li>What time is the borrower scheduled to sign?</li>
+          <li>ETA for the Signed Closing Package.</li>
+        </ul>
+        <span className="font-bold text-sm">
+          Furthermore, I have included the Funding Instructions in this email.
+          Please review and adhere to the provided instructions.
+        </span>
+      </p>
     </div>
   );
 };
