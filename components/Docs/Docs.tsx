@@ -15,79 +15,80 @@ import { useToast } from "@/components/ui/use-toast";
 
 const firstfunding_docs = [
   "DT Closing",
+  "N/A",
+  "Wire",
   "Credit Report",
   "Appraisal",
   "Commitment",
-  "Wire",
   "Protection",
   "Lock",
   "Approval",
   "UWM  > Menu > AUS > Look for Check mark > AUS result > Print",
-  "Loan Application Include Lender",
-  "Note (Include Allonge to Note)",
+  "Universal Loan",
+  "Rate Note",
   "Deed Of Trust",
 ];
 
 const firstfunding_docs2 = [
   "Final Closing Package - ",
+  "Final Closing Disclosure -",
+  "Wire Instructions -",
   "Credit Report -",
   "Appraisal - ",
   "Title Commitment with Legal Description -",
-  "Wire Instructions -",
   "ICL - CPL - EO -",
   "Investor Lock -",
   "Investor CTC - Delegated CTC -",
   "DU Underwriting Findings -",
   "Loan Application -",
-  "Note-",
+  "Note -",
   "Mortgage",
 ];
 
 const pcb_docs = [
+  { keyword: "DT Closing", doc_name: "Final Closing Package -" },
+  { keyword: "N/A", doc_name: "Final Closing Disclosure -" },
+  { keyword: "Wire", doc_name: "Wire instructions -" },
   { keyword: "Approval", doc_name: "Investor CTC - Delegated CTC -" },
   { keyword: "Lock", doc_name: "Investor lock -" },
   { keyword: "Protection", doc_name: "ICL - CPL - EO -" },
-  { keyword: "Wire", doc_name: "Wire instruction -" },
-  { keyword: "N/A", doc_name: "Final Closing Disclosure -" },
   { keyword: "Rate Note", doc_name: "NOTE -" },
-  { keyword: "DT Closing", doc_name: "Final Closing Package -" },
   { keyword: "N/A", doc_name: "Wire Summary -" },
 ];
 
 const firstBank_docs = [
   { keyword: "DT Closing", doc_name: "Final Closing Package -" },
   { keyword: "N/A", doc_name: "Final Closing Disclosure -" },
-  { keyword: "Rate Note", doc_name: "Note -" },
-  { keyword: "(Below Note)", doc_name: "Allonge -" },
+  { keyword: "Wire", doc_name: "Wire instructions -" },
+  { keyword: "Approval", doc_name: "Investor CTC - Delegated CTC -" },
+  { keyword: "Lock", doc_name: "Investor lock -" },
+  { keyword: "Protection", doc_name: "ICL - CPL - EO -" },
+  { keyword: "Optional", doc_name: "Appraisal -" },
   {
     keyword: "UWM  > Menu > AUS > Look for Check mark > AUS result > Print",
     doc_name: "AUS - DU Underwriting -",
   },
-  { keyword: "Protection", doc_name: "ICL - CPL - EO -" },
-  { keyword: "Approval", doc_name: "Investor CTC - Delegated CTC -" },
-  { keyword: "Lock", doc_name: "Investor lock -" },
-  { keyword: "Wire", doc_name: "Wire instructions -" },
-  { keyword: "N/A", doc_name: "Wire Summary -" },
-  { keyword: "Appraisal", doc_name: "Appraisal - (Full Pages)" },
-  { keyword: "Loan Application", doc_name: "1003 -" },
+  { keyword: "Rate Note", doc_name: "Note -" },
+  { keyword: "(Below Note)", doc_name: "Allonge -" },
   { keyword: "N/A", doc_name: "FNM 3.2 FIle -" },
 ];
 
 const originBank_docs = [
-  { keyword: "N/A", doc_name: "FNM 3.2 FIle -" },
   { keyword: "DT Closing", doc_name: "Final Closing Package -" },
-  { keyword: "Loan Application", doc_name: "1003 Loan Application -" },
   { keyword: "N/A", doc_name: "Final Closing Disclosure -" },
+  { keyword: "Wire", doc_name: "Wire instructions -" },
+
   { keyword: "Lock", doc_name: "Investor Lock -" },
+  { keyword: "Appraisal", doc_name: "Appraisal - (Full Pages)" },
+  { keyword: "Approval", doc_name: "Approval Letter CTC -" },
+  { keyword: "Protection", doc_name: "Closing Protection Letter -" },
   {
     keyword: "UWM  > Menu > AUS > Look for Check mark > AUS result > Print",
     doc_name: "AUS Underwriting Approval -",
   },
-  { keyword: "Appraisal", doc_name: "Appraisal - (Full Pages)" },
-  { keyword: "Approval", doc_name: "Approval Letter CTC -" },
-  { keyword: "Protection", doc_name: "Closing Protection Letter -" },
-  { keyword: "Wire", doc_name: "Wire instructions -" },
+  { keyword: "Universal Loan", doc_name: "1003 Loan Application -" },
   { keyword: "Rate Note", doc_name: "NOTE -" },
+  { keyword: "N/A", doc_name: "FNM 3.2 FIle -" },
 ];
 
 const Docs = () => {
@@ -156,7 +157,6 @@ const Docs = () => {
               </div>
               <div className="flex flex-col gap-2">
                 <Button className="mt-2">{`(Lending pad > Search Loan number > Open > Gear Icon > Export > FNM > Download)`}</Button>
-                <Button>Final Closing Disclosure -</Button>
               </div>
             </CardContent>
           </Card>
