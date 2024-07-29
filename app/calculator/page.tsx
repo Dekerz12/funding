@@ -6,6 +6,7 @@ import Docs from "@/components/Docs/Docs";
 import Email from "@/components/Email/Email";
 import Fees from "@/components/Fees/Fees";
 import { Button } from "@/components/ui/button";
+import { DialogTitle } from "@/components/ui/dialog";
 import { CircleDollarSign, FolderOpen, Mail } from "lucide-react";
 
 const CalculatorPage = () => {

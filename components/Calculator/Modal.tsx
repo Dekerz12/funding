@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
+import { DialogTitle } from "@radix-ui/react-dialog";
 
 export function Modal({
   children,
@@ -13,7 +14,10 @@ export function Modal({
       <DialogTrigger asChild>
         <Button>{name}</Button>
       </DialogTrigger>
-      <DialogContent className="w-full overflow-auto">{children}</DialogContent>
+      <DialogContent className="w-full overflow-auto">
+        <DialogTitle></DialogTitle>
+        {children}
+      </DialogContent>
     </Dialog>
   );
 }

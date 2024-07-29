@@ -21,7 +21,6 @@ const generalFees = [
   "Rural Development (USDA) example:  Guarantee, USDA technology",
   "HOA - confirm with closing assist",
   "Prepaid Interest",
-  "All section G fees",
   "Doc prep fee to focus fulfillment",
 ];
 

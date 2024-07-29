@@ -50,7 +50,7 @@ const Email = () => {
       </div>
 
       <p className="mb-8">
-        AXEN CLOSING - {borrower} - {loan_number} - {property}
+        NEXA CLOSING - {borrower} - {loan_number} - {property}
       </p>
 
       <div className="space-y-4">
@@ -62,14 +62,16 @@ const Email = () => {
             <span className="font-bold">
               Please confirm if we are balanced at{" "}
               <span className="text-2xl">
-                {(loan_amount - totalDeduction).toLocaleString()}
+                ${(loan_amount - totalDeduction).toLocaleString()}
               </span>
-              $ .
+              .
             </span>
           </p>
-          <p className="font-bold">
-            Your confirmation is required before we request and order the wire
-            to prevent potential fees and delay.
+          <p className="font-bold ">
+            <mark>
+              Your confirmation is required before we request and order the wire
+              to prevent potential fees and delay.
+            </mark>
           </p>
         </div>
 
@@ -82,18 +84,17 @@ const Email = () => {
         </p>
       </div>
 
-      <p className="font-bold mt-4">
-        Please confirm the following:
-        <ul className="list-disc ml-12 mt-4 mb-4 font-bold">
-          <li>Are the attached Wire Instructions accurate?</li>
-          <li>What time is the borrower scheduled to sign?</li>
-          <li>ETA for the Signed Closing Package.</li>
-        </ul>
-        <span className="font-bold text-sm">
-          Furthermore, I have included the Funding Instructions in this email.
-          Please review and adhere to the provided instructions.
-        </span>
-      </p>
+      <p className="font-bold mt-4">Please confirm the following:</p>
+
+      <ul className="list-disc ml-12 mt-4 mb-4 font-bold">
+        <li>Are the attached Wire Instructions accurate?</li>
+        <li>What time is the borrower scheduled to sign?</li>
+        <li>ETA for the Signed Closing Package.</li>
+      </ul>
+      <span className="font-bold text-base">
+        Furthermore, I have included the Funding Instructions in this email.
+        Please review and adhere to the provided instructions.
+      </span>
     </div>
   );
 };

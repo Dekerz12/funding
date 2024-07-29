@@ -8,8 +8,6 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useToast } from "@/components/ui/use-toast";
 
@@ -42,7 +40,7 @@ const firstfunding_docs2 = [
   "DU Underwriting Findings -",
   "Loan Application -",
   "Note -",
-  "Mortgage",
+  "Mortgage -",
 ];
 
 const pcb_docs = [
@@ -97,7 +95,9 @@ const Docs = () => {
     <div className="mx-auto">
       <Tabs defaultValue="first_funding" className="">
         <TabsList className="grid w-full grid-cols-4">
-          <TabsTrigger value="first_funding">First Funding</TabsTrigger>
+          <TabsTrigger value="first_funding" onClick={() => {}}>
+            First Funding
+          </TabsTrigger>
           <TabsTrigger value="pcb">PLAINS COMMERCE BANK</TabsTrigger>
           <TabsTrigger value="first_bank">FIRST BANK</TabsTrigger>
           <TabsTrigger value="origin_bank">ORIGIN BANK</TabsTrigger>
