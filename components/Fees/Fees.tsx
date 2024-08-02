@@ -21,7 +21,7 @@ const generalFees = [
   "Rural Development (USDA) example:  Guarantee, USDA technology",
   "HOA - confirm with closing assist",
   "Prepaid Interest",
-  "Doc prep fee to focus fulfillment",
+  "Doc prep fee to SLG or Snap Docs",
 ];
 
 const otherBankFees = [
@@ -60,6 +60,8 @@ const feesAdd = [
 
 const usLender = ["Proceeds of Subordinate Lien (section L adjustment"];
 const newRez = ["Closing Coordination Fee  $295"];
+const balloon = ["Secondary Financing (L)"];
+const trac = ["Title - review, and closing (B)"];
 
 const Fees = () => {
   return (
@@ -71,7 +73,7 @@ const Fees = () => {
         <CardContent>
           <div className="flex flex-col gap-4">
             {generalFees.map((fee) => (
-              <p key={fee} className="text-lg">
+              <p key={fee} className="text-base">
                 {fee}
               </p>
             ))}
@@ -87,7 +89,7 @@ const Fees = () => {
           <CardContent>
             <div className="flex flex-col gap-2">
               {feesAdd.map((fee) => (
-                <p key={fee} className="text-lg">
+                <p key={fee} className="text-base">
                   {fee}
                 </p>
               ))}
@@ -102,7 +104,7 @@ const Fees = () => {
           <CardContent>
             <div className="flex flex-col gap-2">
               {otherBankFees.map((fee) => (
-                <p key={fee} className="text-lg">
+                <p key={fee} className="text-base">
                   {fee}
                 </p>
               ))}
@@ -115,13 +117,13 @@ const Fees = () => {
             <CardTitle>HKL Fees</CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="flex flex-col gap-2">
+            <ul className="flex flex-col gap-2 list-disc ml-4">
               {HKLFees.map((fee) => (
-                <p key={fee} className="text-lg">
+                <li key={fee} className="text-base">
                   {fee}
-                </p>
+                </li>
               ))}
-            </div>
+            </ul>
           </CardContent>
         </Card>
       </div>
@@ -134,7 +136,7 @@ const Fees = () => {
           <CardContent>
             <div className="flex flex-col gap-2">
               {windsor.map((fee) => (
-                <p key={fee} className="text-lg">
+                <p key={fee} className="text-base">
                   {fee}
                 </p>
               ))}
@@ -149,7 +151,7 @@ const Fees = () => {
           <CardContent>
             <div className="flex flex-col gap-2">
               {usLender.map((fee) => (
-                <p key={fee} className="text-lg">
+                <p key={fee} className="text-base">
                   {fee}
                 </p>
               ))}
@@ -164,7 +166,37 @@ const Fees = () => {
           <CardContent>
             <div className="flex flex-col gap-2">
               {newRez.map((fee) => (
-                <p key={fee} className="text-lg">
+                <p key={fee} className="text-base">
+                  {fee}
+                </p>
+              ))}
+            </div>
+          </CardContent>
+        </Card>
+
+        <Card className="flex-1">
+          <CardHeader>
+            <CardTitle>For Balloon - UWM Lender</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <div className="flex flex-col gap-2">
+              {balloon.map((fee) => (
+                <p key={fee} className="text-base">
+                  {fee}
+                </p>
+              ))}
+            </div>
+          </CardContent>
+        </Card>
+
+        <Card className="flex-1">
+          <CardHeader>
+            <CardTitle>For Trac Loans - UWM</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <div className="flex flex-col gap-2">
+              {trac.map((fee) => (
+                <p key={fee} className="text-base">
                   {fee}
                 </p>
               ))}
