@@ -1,67 +1,16 @@
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+
 import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-
-const generalFees = [
-  "GRMA Fee for all Georgia Loans $10",
-  "All Section A fees except (L) paid by others",
-  "All section G fees",
-  "All Fees payable to AXEN and Lender",
-  "MERS",
-  "Credit report (unless POC or Paid by others)",
-  "Credit Check (section B)",
-  "Tax Service",
-  "Flood Cert",
-  "Mortage Insurance Premium (FHA)/ Mi Upfront / UFMIP Refund",
-  "VA Funding Fee (VA Loans)",
-  "Rural Development (USDA) example:  Guarantee, USDA technology",
-  "HOA - confirm with closing assist",
-  "Prepaid Interest",
-  "Doc prep fee to SLG or Snap Docs",
-];
-
-const otherBankFees = [
-  "Undisclosed Debt Monitoring/UDM (Kind Lending)",
-  "Alterations (EPM)",
-  "Electronic Doc Signing Fee to Snapdocs (MLB)",
-  "203K Fees (EPM, MLB)",
-  "Repair Holdback  (MLB)",
-  "Contingency Report (MLB)",
-];
-
-const HKLFees = [
-  "Temporary Rate Buydown (section h, k, l, payoffs and payments)",
-  "Escrow holdback  (section k, l, payoffs and payments)",
-  "Reno funds  (section k, l, payoffs and payments)",
-  "Principal Reduction  (section k, l, payoffs and payments)",
-  "Down Payment Assistance (section L) - negative in the wire summary",
-  "Lender Appraisal Credit   (section k, l, payoffs and payments)",
-];
-
-const windsor = [
-  "Contract Processing fee",
-  "Flood cert",
-  "Fraud Service",
-  "Credit Report",
-  "VOE",
-  "MERS",
-];
-
-const feesAdd = [
-  "Offset of fees (EPM)",
-  "Appraisal credit",
-  "MIP Refund",
-  "Fees in Paid others (L)",
-];
-
-const usLender = ["Proceeds of Subordinate Lien (section L adjustment"];
-const newRez = ["Closing Coordination Fee  $295"];
-const balloon = ["Secondary Financing (L)"];
-const trac = ["Title - review, and closing (B)"];
+  generalFees,
+  otherBankFees,
+  HKLFees,
+  windsor,
+  feesAdd,
+  usLender,
+  newRez,
+  balloon,
+  trac,
+} from "@/lib/data";
 
 const Fees = () => {
   return (
