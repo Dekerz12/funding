@@ -35,7 +35,10 @@ const Header = ({
       </TableRow>
       <TableRow className="sections text-wrap">
         <TableCell className="border"></TableCell>
-        <TableCell className="border font-bold">
+        <TableCell
+          className="border font-bold "
+          style={{ wordWrap: "break-word", textAlign: "center" }}
+        >
           Calculation of Amount Needed by Settlement Agent for Closing
         </TableCell>
       </TableRow>
