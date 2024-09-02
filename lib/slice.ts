@@ -1,6 +1,6 @@
 import { create } from "zustand";
-import { CalculatorSlice } from "./store";
+import { CalculatorSlice, createDocsSlice, DocsSlice } from "./store";
 import { createCalculatorSlice } from "./store";
-export const useStore = create<CalculatorSlice>()((...a) => ({
-  ...createCalculatorSlice(...a),
+export const useStore = create<CalculatorSlice & DocsSlice>()((...a) => ({
+  ...createCalculatorSlice(...a),...createDocsSlice(...a)
 }));

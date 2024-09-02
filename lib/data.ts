@@ -15,15 +15,14 @@ export const sectionsNames = sections.map((section) => ({
 }));
 
 export const firstfunding_docs = [
-  "DT Closing",
-  "N/A",
+  " ",
   "Wire",
-  "Credit Report",
-  "Appraisal",
   "Commitment",
   "Protection",
   "Lock",
   "Approval",
+  "Credit Report",
+  "Appraisal",
   "UWM  > Menu > AUS > Look for Check mark > AUS result > Print",
   "Universal Loan",
   "Rate Note",
@@ -31,15 +30,14 @@ export const firstfunding_docs = [
 ];
 
 export const firstfunding_docs2 = [
-  "Final Closing Package - ",
   "Final Closing Disclosure -",
   "Wire Instructions -",
-  "Credit Report -",
-  "Appraisal - ",
   "Title Commitment with Legal Description -",
   "ICL - CPL - EO -",
   "Investor Lock -",
   "Investor CTC - Delegated CTC -",
+  "Credit Report -",
+  "Appraisal - ",
   "DU Underwriting Findings -",
   "Loan Application -",
   "Note -",
@@ -47,7 +45,7 @@ export const firstfunding_docs2 = [
 ];
 
 export const pcb_docs = [
-  { keyword: "DT Closing", doc_name: "Final Closing Package -" },
+
   { keyword: "N/A", doc_name: "Final Closing Disclosure -" },
   { keyword: "Wire", doc_name: "Wire instructions -" },
   { keyword: "Approval", doc_name: "Investor CTC - Delegated CTC -" },
@@ -58,8 +56,8 @@ export const pcb_docs = [
 ];
 
 export const firstBank_docs = [
-  { keyword: "DT Closing", doc_name: "Final Closing Package -" },
-  { keyword: "N/A", doc_name: "Final Closing Disclosure -" },
+
+
   { keyword: "Wire", doc_name: "Wire instructions -" },
   { keyword: "Approval", doc_name: "Investor CTC - Delegated CTC -" },
   { keyword: "Lock", doc_name: "Investor lock -" },
@@ -75,12 +73,11 @@ export const firstBank_docs = [
 ];
 
 export const originBank_docs = [
-  { keyword: "DT Closing", doc_name: "Final Closing Package -" },
-  { keyword: "N/A", doc_name: "Final Closing Disclosure -" },
-  { keyword: "Wire", doc_name: "Wire instructions -" },
 
+  { keyword: " ", doc_name: "Final Closing Disclosure -" },
+  { keyword: "Wire", doc_name: "Wire instructions -" },
   { keyword: "Lock", doc_name: "Investor Lock -" },
-  { keyword: "Appraisal", doc_name: "Appraisal - (Full Pages)" },
+  { keyword: "Appraisal", doc_name: "Appraisal - " },
   { keyword: "Approval", doc_name: "Approval Letter CTC -" },
   { keyword: "Protection", doc_name: "Closing Protection Letter -" },
   {
@@ -88,7 +85,7 @@ export const originBank_docs = [
     doc_name: "AUS Underwriting Approval -",
   },
   { keyword: "Universal Loan", doc_name: "1003 Loan Application -" },
-  { keyword: "Rate Note", doc_name: "NOTE -" },
+  { keyword: "Rate Note", doc_name: "Note -" },
   { keyword: "N/A", doc_name: "FNM 3.2 FIle -" },
 ];
 

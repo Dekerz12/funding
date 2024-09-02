@@ -32,6 +32,13 @@ export interface CalculatorSlice {
   deleteFee: (name: string, id: number) => void;
   updateFee: (name: string, arr: Fee[]) => void;
 }
+export interface DocsSlice {
+  borrowerLastName:string
+  selectedBank:string
+  updateLastName: (name: string) => void;
+  updateBank: (name: string) => void;
+}
+
 
 export const createCalculatorSlice: StateCreator<
   CalculatorSlice,
@@ -132,4 +139,18 @@ export const createCalculatorSlice: StateCreator<
 
       return { selectedSections: state.selectedSections };
     }),
+});
+
+
+
+export const createDocsSlice: StateCreator<
+  DocsSlice,
+  [],
+  [],
+  DocsSlice
+> = (set) => ({
+borrowerLastName:"",
+selectedBank:"first_funding",
+updateLastName: (name: any) => set((state) => ({ borrowerLastName: name })),
+updateBank: (name: any) => set((state) => ({ selectedBank: name }))
 });

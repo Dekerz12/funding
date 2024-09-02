@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Calendar } from "@/components/ui/calendar";
 import {
   Popover,
-  PopoverClose,
+
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
@@ -33,7 +33,7 @@ export function DatePicker({
           {date ? format(date, "MM/dd") : <span>Pick a date</span>}
         </Button>
       </PopoverTrigger>
-      <PopoverClose>
+
         <PopoverContent>
           <Calendar
             mode="single"
@@ -42,7 +42,7 @@ export function DatePicker({
             initialFocus
           />
         </PopoverContent>
-      </PopoverClose>
+
     </Popover>
   );
 }

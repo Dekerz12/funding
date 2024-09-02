@@ -16,32 +16,94 @@ import {
   firstBank_docs,
   originBank_docs,
 } from "@/lib/data";
+import { useStore } from "@/lib/slice";
+import { Input } from "../ui/input";
 
 const Docs = () => {
   const { toast } = useToast();
+  const selectedBank = useStore((state) => state.selectedBank);
+  const updateBank = useStore((state) => state.updateBank);
+  const lastName = useStore((state) => state.borrowerLastName);
+  const changeLastName = useStore((state) => state.updateLastName);
   return (
-    <div className="mx-auto">
-      <Tabs defaultValue="first_funding" className="">
+    <div className="mx-auto py-4">
+      <Tabs defaultValue={selectedBank} className="">
         <TabsList className="grid w-full grid-cols-4">
-          <TabsTrigger value="first_funding" onClick={() => {}}>
+          <TabsTrigger
+            value="first_funding"
+            onClick={() => {
+              updateBank("first_funding");
+            }}
+          >
             First Funding
           </TabsTrigger>
-          <TabsTrigger value="pcb">PLAINS COMMERCE BANK</TabsTrigger>
-          <TabsTrigger value="first_bank">FIRST BANK</TabsTrigger>
-          <TabsTrigger value="origin_bank">ORIGIN BANK</TabsTrigger>
+          <TabsTrigger
+            value="pcb"
+            onClick={() => {
+              updateBank("pcb");
+            }}
+          >
+            PLAINS COMMERCE BANK
+          </TabsTrigger>
+          <TabsTrigger
+            value="first_bank"
+            onClick={() => {
+              updateBank("first_bank");
+            }}
+          >
+            FIRST BANK
+          </TabsTrigger>
+          <TabsTrigger
+            value="origin_bank"
+            onClick={() => {
+              updateBank("origin_bank");
+            }}
+          >
+            ORIGIN BANK
+          </TabsTrigger>
         </TabsList>
         <TabsContent value="first_funding">
           <Card>
             <CardHeader>
               <CardTitle>Cheat Sheet</CardTitle>
-              <CardDescription>
-                Search these keywords to get files from UWM.
-              </CardDescription>
+              <CardDescription></CardDescription>
             </CardHeader>
             <CardContent>
+              <div className="mb-2 flex justify-evenly">
+                <div>
+                  <h1 className="font-bold mb-2 text-lg">
+                    Get Final Closing Package
+                  </h1>
+                  <Button
+                    onClick={(e: any) => {
+                      navigator.clipboard.writeText(
+                        `Final Closing Package - ${lastName}`
+                      );
+                      toast({
+                        title: `Final Closing Package - ${lastName}`,
+                        description: "Copied Successfully",
+                      });
+                    }}
+                    key={"Final Closing Package"}
+                  >
+                    {"Final Closing Package"}
+                  </Button>
+                </div>
+                <div>
+                  <h1 className="font-bold mb-2 text-lg">Borrower Last Name</h1>
+                  <Input
+                    value={lastName}
+                    onChange={(e) => {
+                      changeLastName(e.target.value);
+                    }}
+                  />
+                </div>
+              </div>
+
               <div className="flex gap-2">
                 <div>
-                  <h1 className="font-bold mb-4 text-lg">Copy Keyword</h1>
+                  <h1 className="font-bold mb-2 text-lg">Copy Keyword</h1>
+
                   <div className="flex flex-col gap-2">
                     {firstfunding_docs.map((doc) => {
                       return (
@@ -62,15 +124,17 @@ const Docs = () => {
                   </div>
                 </div>
                 <div>
-                  <h1 className="font-bold mb-4 text-lg">Copy Document Name</h1>
+                  <h1 className="font-bold mb-2 text-lg">Copy Document Name</h1>
                   <div className="flex flex-col gap-2">
                     {firstfunding_docs2.map((doc) => {
                       return (
                         <Button
                           onClick={(e: any) => {
-                            navigator.clipboard.writeText(e.target.innerHTML);
+                            navigator.clipboard.writeText(
+                              e.target.innerHTML + " " + lastName
+                            );
                             toast({
-                              title: e.target.innerHTML,
+                              title: e.target.innerHTML + " " + lastName,
                               description: "Copied Successfully",
                             });
                           }}
@@ -93,14 +157,43 @@ const Docs = () => {
           <Card>
             <CardHeader>
               <CardTitle>Cheat Sheet</CardTitle>
-              <CardDescription>
-                Search these keywords to get files from UWM.
-              </CardDescription>
+              <CardDescription></CardDescription>
             </CardHeader>
             <CardContent>
+              <div className="mb-2 flex justify-evenly">
+                <div>
+                  <h1 className="font-bold mb-2 text-lg">
+                    Get Final Closing Package
+                  </h1>
+                  <Button
+                    onClick={(e: any) => {
+                      navigator.clipboard.writeText(
+                        `Final Closing Package - ${lastName}`
+                      );
+                      toast({
+                        title: `Final Closing Package - ${lastName}`,
+                        description: "Copied Successfully",
+                      });
+                    }}
+                    key={"Final Closing Package"}
+                  >
+                    {"Final Closing Package"}
+                  </Button>
+                </div>
+                <div>
+                  <h1 className="font-bold mb-2 text-lg">Borrower Last Name</h1>
+                  <Input
+                    value={lastName}
+                    onChange={(e) => {
+                      changeLastName(e.target.value);
+                    }}
+                  />
+                </div>
+              </div>
+
               <div className="flex ">
-                <h1 className="font-bold mb-4 text-lg flex-1">Copy Keyword</h1>
-                <h1 className="font-bold mb-4 text-lg flex-1">
+                <h1 className="font-bold mb-2 text-lg flex-1">Copy Keyword</h1>
+                <h1 className="font-bold mb-2 text-lg flex-1">
                   Copy Document Name
                 </h1>
               </div>
@@ -124,12 +217,15 @@ const Docs = () => {
                       <Button
                         className="flex-1"
                         onClick={(e: any) => {
-                          navigator.clipboard.writeText(e.target.innerHTML);
+                          navigator.clipboard.writeText(
+                            e.target.innerHTML + " " + lastName
+                          );
                           toast({
-                            title: e.target.innerHTML,
+                            title: e.target.innerHTML + " " + lastName,
                             description: "Copied Successfully",
                           });
                         }}
+                        key={doc.doc_name}
                       >
                         {doc.doc_name}
                       </Button>
@@ -144,14 +240,42 @@ const Docs = () => {
           <Card>
             <CardHeader>
               <CardTitle>Cheat Sheet</CardTitle>
-              <CardDescription>
-                Search these keywords to get files from UWM.
-              </CardDescription>
+              <CardDescription></CardDescription>
             </CardHeader>
             <CardContent>
+              <div className="mb-2 flex justify-evenly">
+                <div>
+                  <h1 className="font-bold mb-2 text-lg">
+                    Get Final Closing Package
+                  </h1>
+                  <Button
+                    onClick={(e: any) => {
+                      navigator.clipboard.writeText(
+                        `Final Closing Package - ${lastName}`
+                      );
+                      toast({
+                        title: `Final Closing Package - ${lastName}`,
+                        description: "Copied Successfully",
+                      });
+                    }}
+                    key={"Final Closing Package"}
+                  >
+                    {"Final Closing Package"}
+                  </Button>
+                </div>
+                <div>
+                  <h1 className="font-bold mb-2 text-lg">Borrower Last Name</h1>
+                  <Input
+                    value={lastName}
+                    onChange={(e) => {
+                      changeLastName(e.target.value);
+                    }}
+                  />
+                </div>
+              </div>
               <div className="flex ">
-                <h1 className="font-bold mb-4 text-lg flex-1">Copy Keyword</h1>
-                <h1 className="font-bold mb-4 text-lg flex-1">
+                <h1 className="font-bold mb-2 text-lg flex-1">Copy Keyword</h1>
+                <h1 className="font-bold mb-2 text-lg flex-1">
                   Copy Document Name
                 </h1>
               </div>
@@ -175,12 +299,15 @@ const Docs = () => {
                       <Button
                         className="flex-1"
                         onClick={(e: any) => {
-                          navigator.clipboard.writeText(e.target.innerHTML);
+                          navigator.clipboard.writeText(
+                            e.target.innerHTML + " " + lastName
+                          );
                           toast({
-                            title: e.target.innerHTML,
+                            title: e.target.innerHTML + " " + lastName,
                             description: "Copied Successfully",
                           });
                         }}
+                        key={doc.doc_name}
                       >
                         {doc.doc_name}
                       </Button>
@@ -195,14 +322,42 @@ const Docs = () => {
           <Card>
             <CardHeader>
               <CardTitle>Cheat Sheet</CardTitle>
-              <CardDescription>
-                Search these keywords to get files from UWM.
-              </CardDescription>
+              <CardDescription></CardDescription>
             </CardHeader>
             <CardContent>
+              <div className="mb-2 flex justify-evenly">
+                <div>
+                  <h1 className="font-bold mb-2 text-lg">
+                    Get Final Closing Package
+                  </h1>
+                  <Button
+                    onClick={(e: any) => {
+                      navigator.clipboard.writeText(
+                        `Final Closing Package - ${lastName}`
+                      );
+                      toast({
+                        title: `Final Closing Package - ${lastName}`,
+                        description: "Copied Successfully",
+                      });
+                    }}
+                    key={"Final Closing Package"}
+                  >
+                    {"Final Closing Package"}
+                  </Button>
+                </div>
+                <div>
+                  <h1 className="font-bold mb-2 text-lg">Borrower Last Name</h1>
+                  <Input
+                    value={lastName}
+                    onChange={(e) => {
+                      changeLastName(e.target.value);
+                    }}
+                  />
+                </div>
+              </div>
               <div className="flex ">
-                <h1 className="font-bold mb-4 text-lg flex-1">Copy Keyword</h1>
-                <h1 className="font-bold mb-4 text-lg flex-1">
+                <h1 className="font-bold mb-2 text-lg flex-1">Copy Keyword</h1>
+                <h1 className="font-bold mb-2 text-lg flex-1">
                   Copy Document Name
                 </h1>
               </div>
@@ -226,12 +381,15 @@ const Docs = () => {
                       <Button
                         className="flex-1"
                         onClick={(e: any) => {
-                          navigator.clipboard.writeText(e.target.innerHTML);
+                          navigator.clipboard.writeText(
+                            e.target.innerHTML + " " + lastName
+                          );
                           toast({
-                            title: e.target.innerHTML,
+                            title: e.target.innerHTML + " " + lastName,
                             description: "Copied Successfully",
                           });
                         }}
+                        key={doc.doc_name}
                       >
                         {doc.doc_name}
                       </Button>

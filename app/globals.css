@@ -85,7 +85,7 @@
 }
 
 .sections td + td {
-  text-align: center;
+  text-align: right;
 }
 
 .section-closing {
