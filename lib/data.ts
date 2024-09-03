@@ -97,7 +97,7 @@ export const generalFees = [
   "MERS",
   "Credit report (unless POC or Paid by others)",
   "Credit Check (section B)",
-  "Collateral Desktop Analysis (Sectiion B)",
+  "Collateral Desktop Analysis (Section B)",
   "Tax Service",
   "Flood Cert",
   "Mortage Insurance Premium (FHA)/ Mi Upfront / UFMIP Refund",
