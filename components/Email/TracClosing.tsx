@@ -31,8 +31,11 @@ const TracClosing = () => {
           <p>Hi Team,</p>
 
           <p>
-            Requesting wire order for this file{" "}
-            <b>1524154346 - Tyrone Coleman</b>.
+            Requesting wire order for this file
+            <b>
+              {loan_number} - {borrower}
+            </b>
+            .
           </p>
 
           <ul className="mb-8">
