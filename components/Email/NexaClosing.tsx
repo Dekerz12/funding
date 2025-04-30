@@ -76,7 +76,7 @@ const NexaClosing = () => {
             is included below for reference.
           </li>
           <li>
-            What's the best number to call to verify the wire instructions?
+            What&apos;s the best number to call to verify the wire instructions?
           </li>
           <li>When and where is the borrower scheduled to sign?</li>
         </ul>
