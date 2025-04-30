@@ -51,51 +51,58 @@ const NexaClosing = () => {
       <div className="">
         <h1 className="font-bold text-xl mb-4">Subject Line</h1>
         <p className="mb-8">
-          NEXA CLOSING - {borrower} - {loan_number} - {property}
+          NEXA100 Funding Wire - {loan_number} - {borrower} - {property}
+        </p>
+
+        <p>
+          NEXA NDC Funding Wire - {loan_number} - {borrower} - {property}
         </p>
       </div>
 
       <div className="space-y-4">
         <h1 className="font-bold text-xl mb-4">Template</h1>
         <p>Hi Title Team,</p>
-        <div>
-          {" "}
-          <p>
-            My name is {funder}, your funder for this loan.{" "}
-            <span className="font-bold">
-              Please confirm if we are balanced at{" "}
-              <span className="text-2xl">
-                ${(loan_amount - totalDeduction).toLocaleString()}
-              </span>
-              .
-            </span>
-          </p>
-          <p className="font-bold ">
-            Your confirmation is required before we request and order the wire
-            to prevent potential fees and delay.
-          </p>
-        </div>
 
-        <p>Here is the wire breakdown for your reference:</p>
+        <p className="italic">
+          To avoid confusion and ensure a prompt response, please reply only to
+          this email thread regarding the funding wire.
+        </p>
+        <p className="font-bold ">Please confirm the following:</p>
+
+        <ul className="list-disc ml-12">
+          <li>
+            Are we balanced at $
+            {(loan_amount - totalDeduction).toLocaleString()} The wire breakdown
+            is included below for reference.
+          </li>
+          <li>
+            What's the best number to call to verify the wire instructions?
+          </li>
+          <li>When and where is the borrower scheduled to sign?</li>
+        </ul>
+
+        <p className="text-red-500 font-bold">
+          Your confirmation is required before we request and order the wire to
+          prevent potential fees and delays.
+        </p>
 
         <p>
           Attached to this email is the CD containing the highlighted fees we
           are netting out of the wire. Let me know if there are any changes to
           the Final CD.
         </p>
+
+        <p className="text-base">
+          Furthermore, I have included the Funding Instructions in this email.
+          Please review and adhere to the provided instructions.
+        </p>
+
+        <p className="italic">
+          Please note: You will receive a separate email from the Reviewer of
+          this loan outlining the requirements to authorize funding prior to
+          disbursement.
+        </p>
       </div>
-
-      <p className="font-bold mt-4">Please confirm the following:</p>
-
-      <ul className="list-disc ml-12 mt-4 mb-4 font-bold">
-        <li>Are the attached Wire Instructions accurate?</li>
-        <li>What time is the borrower scheduled to sign?</li>
-        <li>ETA for the Signed Closing Package.</li>
-      </ul>
-      <span className="font-bold text-base">
-        Furthermore, I have included the Funding Instructions in this email.
-        Please review and adhere to the provided instructions.
-      </span>
     </div>
   );
 };
